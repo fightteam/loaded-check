@@ -37,7 +37,7 @@ module.exports = function(grunt){
                 // separator: ""
             },
             dist: {
-                src: ["src/core.js", "src/helper.js", "src/check.js"],
+                src: ["src/intro.js", "src/core.js", "src/helper.js", "src/check.js", "src/outro.js",],
                 dest: "dist/<%=pkg.name %>.js"
             },
         },
@@ -45,14 +45,14 @@ module.exports = function(grunt){
         watch: {
             jshint: {
                 files: ["src/**/*.js"],
-                tasks: ["jshint:all", "requirejs:build", "compileBuild"]
+                tasks: ["concat", "compileBuild"]
             }
         }
 
     });
 
     // 默认任务
-    grunt.registerTask("default", ["jshint:all", "concat", "compileBuild"]);
+    grunt.registerTask("default", ["concat", "compileBuild"]);
 
 
     // 开发
