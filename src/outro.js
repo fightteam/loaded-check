@@ -1,3 +1,8 @@
+
+if (L.auto) {
+	L.current = new L();
+};
+
 if ( typeof define === "function" && define.amd ) {
 		define( "L", [], function() {
 			return L;
@@ -6,3 +11,4 @@ if ( typeof define === "function" && define.amd ) {
 
 	return (window.L = L);
 }));
+
